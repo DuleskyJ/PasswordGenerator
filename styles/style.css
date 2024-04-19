@@ -1,6 +1,8 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
-    background-color: #f8f8f8;
+    background-image: url('/assets/gradient-cyber-futuristic-background_23-2149117429.avif');
+    background-size: cover;
+    background-position: center;
     margin: 0;
     padding: 0;
     display: flex;
@@ -9,49 +11,69 @@ body {
     height: 100vh;
 }
 
+div{
+    display: flex;
+    flex-direction: column;
+}
+
 .container {
-    background-color: #fff;
+    background-color: #250f7e;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    width: 320px;
+    width: 980px;   
+    height: 480px;
     max-width: 100%;
     text-align: center;
     margin-top: 50px;
 }
 
 h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
+    font-size: 106px;
+    color: #cc9fe9;
+    font-family: "Jersey 10", sans-serif;
+    font-weight: 400;
+    font-style: normal;
     text-align: center;
 }
 
 label {
-    display: block;
-    margin-bottom: 10px;
-}
-
-#password {
-    margin-top: 20px;
-    font-size: 18px;
+    display: flex;
     text-align: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 22px;
 }
 
 #juicebtn {
-    background-color: #007bff;
-    color: #fff;
-    border: none;
+    background-color: #6026d3;
+    color: #f5d2d2;
+    border: 2px solid #280c3a;
     border-radius: 4px;
     padding: 10px 20px;
-    font-size: 16px;
+    font-size: 76px;
     cursor: pointer;
-    display: block;
+    display: flex;
     width: 100%;
     margin-top: 20px;
+    height: 360px;
+    transition: all 0.3s ease;
 }
 
+#juicebtn:hover {
+    background-color: #6026d3;
+    color: #f5d2d2
+}
+
+#juicebtn:active {
+    background-color: #1b0a3c;
+    color: #f5d2d2;
+    border-color: transparent; 
+    box-shadow: 0 0 0 3px #6026d3;
+  }
+
 button:hover {
-    background-color: #0056b3;
+    background-color: #1b0a3c;
 }
 
 .modal {
@@ -63,28 +85,86 @@ button:hover {
     width: 100%; 
     height: 100%;
     overflow: auto; 
-    background-color: rgb(0,0,0); 
-    background-color: rgba(0,0,0,0.4); 
+    background-color: rgba(0,0,0,0.6); 
 }
   
 .modal-content {
-    background-color: #fefefe;
+    background-color: #280c3a;
+    color: #cc9fe9;
     margin: 15% auto; 
     padding: 20px;
-    border: 1px solid #888;
+    border: 1px solid transparent;
     width: 80%; 
+    position: relative;
+    align-items: center;
+}
+
+.modal-content::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid transparent; 
+    border-radius: 5px;
+    z-index: -1; 
+    animation: neon-animation 1.5s ease-in-out infinite alternate;
+}
+
+@keyframes neon-animation {
+    0% {
+        box-shadow: 0 0 5px #cc9fe9,
+                    0 0 10px #cc9fe9,
+                    0 0 15px #cc9fe9,
+                    0 0 20px #cc9fe9,
+                    0 0 35px #cc9fe9,
+                    0 0 40px #cc9fe9,
+                    0 0 50px #cc9fe9,
+                    0 0 75px #cc9fe9;
+    }
+    100% {
+        box-shadow: 0 0 3px #cc9fe9,
+                    0 0 7px #cc9fe9,
+                    0 0 10px #cc9fe9,
+                    0 0 15px #cc9fe9,
+                    0 0 25px #cc9fe9,
+                    0 0 30px #cc9fe9,
+                    0 0 40px #cc9fe9,
+                    0 0 60px #cc9fe9;
+    }
 }
 
 .close {
-    color: #aaa;
+    color: #cc9fe9;
     float: right;
+    align-self: flex-end;
     font-size: 28px;
     font-weight: bold;
 }
 
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: #cc9fe9;
+    color: #f5d2d2;
+    border-radius: 4px;
+    padding: 10px 20px;
+    font-size: 42px;
+    font-weight: 400;
+    font-family: "Jersey 10", sans-serif;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.password {
+    font-size: 96px;
+    color: #f1ddff;
+    font-family: "Jersey 10", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    margin-top: 20px;
 }

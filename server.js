@@ -47,6 +47,9 @@ document.getElementById("allDone").addEventListener("click", function() {
     document.getElementById("password").innerText = generatedPassword;
 
     modal.style.display = "none";
+    document.getElementById("juicebtn").style.display = "none";
+
+    addThankYouMessage();
 });
 
 function generateRandomPassword(passwordCriteria) {
