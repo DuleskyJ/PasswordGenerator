@@ -3,8 +3,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password Juicer</title>
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
 </head>
 <body>
+        <!--Incoming MODAL-->
+<div id="juiceModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>SELECT PASSWORD CRITERIA</h2>
+        <label><input type="checkbox" id="lowercaseNowBox">Include lowercase letters?</label>
+        <label><input type="checkbox" id="uppercaseNowBox">Include uppercase letters?</label>
+        <label><input type="checkbox" id="numericNowBox">Include numbers?</label>
+        <label><input type="checkbox" id="specialNowBox">Include special characters?</label>
+        <button id="allDone">All Done!</button>
+    </div>
+</div>
     <div class="container">
         <h1>Password Juicer</h1>
         <button id="juicebtn"> Juice Me A Password </button>

@@ -1,45 +1,63 @@
-document.getElementbyId('juicebtn').addEventListener('click', generatePassword)
-var lowercaseNow = confirm("Include lowercase letters please.");
-var uppercaseNow = confirm("Include a UPPERCASE LETTER!");
-var numericNow = confirm("Include numbers ye?");
-var specialNow = confirm("Include some special characters please!");
+var modal = document.getElementById("myModal");
+var generateBtn = document.getElementById("generateBtn");
+var span = document.getElementsByClassName("close")[0];
 
-var password = generateRandomPassword(passwordLength, lowercaseNow, uppercaseNow, numericNow, specialNow);
-var passwordCriteria = {
-    length: passwordLength,
-    lowercaseNow: confirm("Include lowercase letters please."),
-    uppercaseNow: confirm("Include a UPPERCASE LETTER!"),
-    numericNow: confirm("Include numbers ye?"),
-    specialNow: confirm("Include some special characters please!"),
-};
+generateBtn.onclick = function() {
+  modal.style.display = "block";
+}
 
-function generatePassword() {
-    var passwordLength = parseInt(prompt("Enter the length you'd like you're password (between 8-128 characters)"));
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
+document.getElementById("criteriaDone").addEventListener("click", function() {
+  var lowercaseNow = document.getElementById("lowercaseCheckbox").checked;
+  var uppercaseNow = document.getElementById("uppercaseCheckbox").checked;
+  var numericNow = document.getElementById("numericCheckbox").checked;
+  var specialNow = document.getElementById("specialCheckbox").checked;
+
+  if (!lowercaseNow && !uppercaseNow && !numericNow && !specialNow) {
+    alert("You need to select at least one criteria!");
+    return;
+  }
+
+  var passwordLength = parseInt(prompt("Enter the length you'd like your password (between 8-128 characters)"));
     
-    if (isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
-        passwordLength = parseInt(prompt("INVALID! RECONSIDER YOUR PASSWORD REMEMBER 8-128 CHARACTERS! THANK YOU :)!"));
-    }
-};
+  if (isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
+    alert("INVALID! Please enter a number between 8 and 128 characters.");
+    return;
+  }
 
-if (!lowercaseNow && !uppercaseNow && !numericNow && !specialNow) {
-    alert("You need to have at least of each character type")
-    lowercaseNow = confirm("Include lowercase letters please.");
-    uppercaseNow = confirm("Include a UPPERCASE LETTER!");
-    numericNow = confirm("Include numbers ye?");
-    specialNow = confirm("Include some special characters please!");
-};
+  var passwordCriteria = {
+    length: passwordLength,
+    lowercaseNow: lowercaseNow,
+    uppercaseNow: uppercaseNow,
+    numericNow: numericNow,
+    specialNow: specialNow
+  };
+
+  var generatedPassword = generateRandomPassword(passwordCriteria);
+  document.getElementById("password").innerText = generatedPassword;
+
+  modal.style.display = "none";
+});
 
 function generateRandomPassword(passwordCriteria) {
-    var charshet = ''; 
-    if (passwordCriteria.lowercaseNow) charset += 'abcdefghijklmnaopqrstuvwxyz';
-    if (passwordCriteria.uppercaseNow) charset += 'ABCDEFGHIJKLMNAOPQRSTUVWXYZ';
+    var charset = ''; 
+    if (passwordCriteria.lowercaseNow) charset += 'abcdefghijklmnopqrstuvwxyz';
+    if (passwordCriteria.uppercaseNow) charset += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     if (passwordCriteria.numericNow) charset += '0123456789';
     if (passwordCriteria.specialNow) charset += '!@#$%^&*()-_+=?.';
 
-    // New information UNLOCKED charAt to randomly select from string
     var password = '';
     for (var i = 0; i < passwordCriteria.length; i++) {
         password += charset.charAt(Math.floor(Math.random() * charset.length));
     }
-        return password;
+    return password;
 }
