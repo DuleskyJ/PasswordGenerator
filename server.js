@@ -1,51 +1,52 @@
-var modal = document.getElementById("myModal");
-var generateBtn = document.getElementById("generateBtn");
+var modal = document.getElementById("juiceModal");
+var generateBtn = document.getElementById("juicebtn");
 var span = document.getElementsByClassName("close")[0];
 
 generateBtn.onclick = function() {
-  modal.style.display = "block";
+    modal.style.display = "block";
 }
 
 span.onclick = function() {
-  modal.style.display = "none";
+    modal.style.display = "none";
 }
 
 window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
 }
 
-document.getElementById("criteriaDone").addEventListener("click", function() {
-  var lowercaseNow = document.getElementById("lowercaseCheckbox").checked;
-  var uppercaseNow = document.getElementById("uppercaseCheckbox").checked;
-  var numericNow = document.getElementById("numericCheckbox").checked;
-  var specialNow = document.getElementById("specialCheckbox").checked;
+document.getElementById("allDone").addEventListener("click", function() {
+    var lowercaseNow = document.getElementById("lowercaseNowBox").checked;
+    var uppercaseNow = document.getElementById("uppercaseNowBox").checked;
+    var numericNow = document.getElementById("numericNowBox").checked;
+    var specialNow = document.getElementById("specialNowBox").checked;
 
-  if (!lowercaseNow && !uppercaseNow && !numericNow && !specialNow) {
-    alert("You need to select at least one criteria!");
-    return;
-  }
+    if (!lowercaseNow && !uppercaseNow && !numericNow && !specialNow) {
+        alert("You need to select at least one criteria!");
+        return;
+    }
 
-  var passwordLength = parseInt(prompt("Enter the length you'd like your password (between 8-128 characters)"));
+    var passwordLength = parseInt(prompt("Enter the length you'd like your password (between 8-128 characters)"));
     
-  if (isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
-    alert("INVALID! Please enter a number between 8 and 128 characters.");
-    return;
-  }
+    if (isNaN(passwordLength) || passwordLength < 8 || passwordLength > 128) {
+        alert("INVALID! Please enter a number between 8 and 128 characters.");
+        return;
+    }
 
-  var passwordCriteria = {
-    length: passwordLength,
-    lowercaseNow: lowercaseNow,
-    uppercaseNow: uppercaseNow,
-    numericNow: numericNow,
-    specialNow: specialNow
-  };
+    var passwordCriteria = {
+        length: passwordLength,
+        lowercaseNow: lowercaseNow,
+        uppercaseNow: uppercaseNow,
+        numericNow: numericNow,
+        specialNow: specialNow
+    };
 
-  var generatedPassword = generateRandomPassword(passwordCriteria);
-  document.getElementById("password").innerText = generatedPassword;
+    var generatedPassword = generateRandomPassword(passwordCriteria);
+    document.getElementById("passwordLabel").innerText = "Your Password:";
+    document.getElementById("password").innerText = generatedPassword;
 
-  modal.style.display = "none";
+    modal.style.display = "none";
 });
 
 function generateRandomPassword(passwordCriteria) {
