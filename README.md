@@ -3,7 +3,7 @@
 ### Let's Go!!!! 
 
 Here lies my personalized password generator! 
-I wanted the theme to be appealing and a nice dark intriguing color so why not purple. My application here applies my basic newfound understanding of Javascript combined with some of my HTML & CSS knowledge. It's going to be a quick one stop website so why not make it FUN. 
+I wanted the theme to be appealing and a dark intriguing color so why not purple. My application here applies my basic newfound understanding of Javascript combined with some of my HTML & CSS knowledge. It's going to be a quick one stop website so why not make it FUN. 
 
 Instructions are simple just load up the deployed application by clicking on its link.Then you are presented with a button reading "Juice me a password" so you go ahead and click the button as that's what they're made to do. THEN BOOM! A nice modal interface pops up with experimental neon back lighting. More importantly, the options to select what specifically you want in your password the 4 options being:
 
