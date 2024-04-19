@@ -17,9 +17,9 @@ Then a glorious randomly-generated password is now at your disposal.
 Making it a quick and efficient pit stop.
 
 Screenshots:
-![](assets/Screenshot%20(22).png)
-![](assets/Screenshot%20(23).png)
-![](assets/Screenshot%20(24).png)
+![](assets/Screenshot%20(25).png)
+![](assets/Screenshot%20(26).png)
+![](assets/Screenshot%20(27).png)
 
 
 Link to deployed application: https://stagedevents-047a896676c3.herokuapp.com/signup 
