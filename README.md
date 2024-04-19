@@ -23,3 +23,5 @@ Screenshots:
 
 
 Link to deployed application: https://stagedevents-047a896676c3.herokuapp.com/signup 
+
+Credit to Freepik for this fire background: https://img.freepik.com/free-vector/gradient-cyber-futuristic-background_23-2149117429.jpg?w=996&t=st=1713518240~exp=1713518840~hmac=d05cb6e866c72df7bea38faf21672313634d980e2dfc359ed44f10f7c3f52271
